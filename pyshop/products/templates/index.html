@@ -1,0 +1,65 @@
+{% extends 'base.html' %} {% block content %}
+<html lang="en">
+
+<head>
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/css.css' %}">
+
+    <title>Document</title>
+</head>
+
+<body class="bg-light">
+    <div id='body_index'>
+        <h1>Recomended</h1>
+        <div class="row">
+            {%for product in products %}
+            <div style="padding-right: 10px;">
+                <div class="card" style="padding-bottom: 100px;">
+                    <div style="height: 175px;width: 265px;">
+                        <div class="image">
+                            <img src="{{product.image}}" class="card-img-top" alt="..." class="img"
+                                style="height: 175px; width: 265px;">
+                            <div class="bottom-right">
+                                <div class="text-block">
+                                    <p>{{ product.videoTime }}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="vidoe_info">
+                            <span class="title">
+                                <img class="rounded-circle" src="{{ product.icon }}" alt="..."
+                                    style="height: 37px; width: 40px;">
+                                {{ product.title }}
+                            </span>
+                            <span class="title2">
+                                {{ product.username }}
+                                {{ product.views }}
+                                {{ product.uploadeDay }}
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+
+</html>
+
+
+{% endblock %}
+
+<!--
+image
+videoTime
+icon
+title
+username
+views 
+uploadeDay  
+-->

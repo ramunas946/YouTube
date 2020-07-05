@@ -1,0 +1,138 @@
+/* On screens that are 992px wide or less, go from four columns to two columns */
+
+@media screen and (max-width: 992px) {
+    #navbar {
+        color: red;
+    }
+}
+
+/* On screens that are 600px wide or less, make the columns stack on top of each other instead of next to each other */
+
+@media screen and (max-width: 718px) {
+    #navbar {
+        color: red;
+    }
+    #navbar_search{
+        width: 40%;
+    }
+}
+@media screen and (min-width: 718px) {
+    #navbar_search{
+        width: 70%;
+    }
+    
+}
+@media screen and (max-width: 605px) {
+    #navbar_search{
+        width: 30%;
+    }
+    
+}
+
+.icon {
+    text-align: right;
+}
+
+#body_index {}
+
+span.title {
+    display: inline-block;
+}
+
+span.title2 {
+    width: 250px;
+    display: inline-block;
+}
+
+.vedio_info {
+    height: 100px;
+    width: 100px;
+}
+
+.imgpic {
+    width: 40px;
+    height: 40px;
+    border: 1px solid blue;
+}
+
+.bottom-right {
+    position: absolute;
+    bottom: 8px;
+    right: 16px;
+}
+
+.text-block {
+    position: absolute;
+    bottom: 80px;
+    right: -10px;
+    color: white;
+    padding-left: 10px;
+}
+
+.image {
+    position: relative;
+    width: 100%;
+    /* for IE 6 */
+}
+
+p {
+    position: absolute;
+    top: 64px;
+    left: -84px;
+    width: 100px;
+    text-align: right;
+}
+
+.tab_image {
+    border-radius: 40px;
+    padding: 0px;
+}
+
+h1 {
+    color: red;
+}
+
+#navbaropen button:focus {
+    width: 40px;
+    height: 40px;
+    border-color: white;
+    padding-right: 5px;
+}
+
+#navbar_side {
+    background-color: #ffffffaf;
+    border-color: white;
+    width: 160px;
+}
+
+.buttons_nav {
+    display: inherit;
+    width: 25%;
+}
+
+.nav-link {
+    color: black;
+}
+
+.container {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    position: absolute;
+    left: 150px;
+    top: 104px;
+    right: 0;
+    bottom: 0;
+}
+
+#navbar {
+    width: 100%;
+}
+
+.navbar {
+    flex-wrap: unset;
+}
+#navbar_yt{
+    width: 25%;
+}
+
