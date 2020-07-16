@@ -19,10 +19,9 @@
             {%for product in products %}
             <div style="padding-right: 10px;">
                 <div class="card" style="padding-bottom: 100px;">
-                    <div style="height: 175px;width: 265px;">
+                    <div id="cardsinzoom">
                         <div class="image">
-                            <img src="{{product.image}}" class="card-img-top" alt="..." class="img"
-                                style="height: 175px; width: 265px;">
+                            <img id="cardsinzoom" src="{{product.image}}" class="card-img-top" alt="..." class="img">
                             <div class="bottom-right">
                                 <div class="text-block">
                                     <p>{{ product.videoTime }}</p>

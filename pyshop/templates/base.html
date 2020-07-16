@@ -18,45 +18,48 @@
 </head>
 <nav id="navbar" class="navbar navbar-light">
   <div id="navbar_yt" style="display: inherit">
-    <button id="navbaropen" class="navbar-toggler" type="button" data-toggle="collapse"
-      style="border-color: rgba(0,0,0,0);outline: 0px;" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-      aria-expanded="false" aria-label="Toggle navigation">
+    <button id="navbaropen" onclick="removescroll()" class="navbar-toggler" type="button" data-toggle="collapse"
+      style="border-color: rgba(0,0,0,0);outline: 0px;" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <img src="{% static 'imges/YouTube_icon.png' %}" style=" height:
     37px; width: 40px; " alt="">
     <a class="navbar-brand" href="#">YouTube</a>
   </div>
-  <div id="navbar_search" style="display: inherit">
-    <input id="search_button" class="form-control my-0 py-1 red-border" type="text" placeholder="Search" aria-label="Search"
-      style=" height:45px;">
-    <div class="input-group-append">
-      <button class="btn my-2 my-sm-0" type="submit"><i class="fas fa-search text-grey bg-light" aria-hidden="true"><img
-            src="{% static 'imges/search.png' %}" style=" height:20px; width: 20px; " alt=""></i></button>
-      <button class="btn my-2 my-sm-0" type="submit"><img src="{% static 'imges/keyboard.png' %}"
-          style=" height:30px; width: 30px; " alt=""></button>
-    </div>
+  <div id="navbar_search" style="display: inherit;" class="border border-dark">
+    <input id="search_button" class="form-control my-0 py-1 red-border rounded-0" type="text" placeholder="Search"
+      aria-label="Search" style=" height:45px;">
+    <span class="border-left border-dark" style=" height: 45px; width: 70px;background-color: #dadada;">
+      <button id="serchbutton" class="btn my-2 my-sm-0" type="submit" style="height: 45px;width: 70px;"><i
+          class="fas fa-search text-grey bg-light" aria-hidden="true"><img src="{% static 'imges/search.png' %}"
+            style=" height:20px; width: 20px; " alt=""></i></button></span>
   </div>
   <div class="buttons_nav" style="display: inherit">
     <div class="dropdown">
-      <button type="button" class="btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <button id="buttons" type="button" class="btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <img src="{% static 'imges/camera.png' %}" style=" height:20px; width: 20px; " alt="">
       </button>
       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <a class="dropdown-item" href="#">Action</a>
+        <a class="dropdown-item" href="#">Upload video</a>
+        <a class="dropdown-item" href="#">Go live</a>
       </div>
     </div>
     <div class="dropdown">
-      <button class="btn" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+      <button id="buttons" class="btn" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
         aria-expanded="false">
         <img src="{% static 'imges/dots.png' %}" style=" height:20px; width: 20px; " alt="">
       </button>
       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <a class="dropdown-item" href="#">Action</a>
+        <a class="dropdown-item" href="#">YouTube TV</a>
+        <a class="dropdown-item" href="#">YouTube Music</a>
+        <a class="dropdown-item" href="#">YouTube Kids</a>
+        <a class="dropdown-item" href="#">YouTube Academy</a>
+        <a class="dropdown-item" href="#">YouTube for Artists</a>
       </div>
     </div>
     <div class="dropdown">
-      <button type="button" class="btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <button id="buttons" type="button" class="btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <img src="{% static 'imges/bell.png' %}" style=" height:20px; width: 20px; " alt="">
       </button>
       <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
@@ -64,7 +67,7 @@
       </div>
     </div>
     <div class="dropdown">
-      <button type="button" class="btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <button id="buttons" type="button" class="btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <img class=" rounded-circle " src="
     https://cdn.pixabay.com/photo/2017/02/01/22/02/mountain-landscape-2031539__340.jpg " alt=" ... " style=" height:
     37px; width: 40px; ">
@@ -75,130 +78,286 @@
     </div>
   </div>
 </nav>
-<nav id="navbar_side" class="scrolling-navbar">
-  <div>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul id="sidebarstyle" class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Trending</a>
-        </li>
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Subscriptions</a>
-        </li>
-        <li>
-          <hr>
-        </li>
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Library</a>
-        </li>
-        <li class="nav-item active">
-          <a class="nav-link" href="#">History</a>
-        </li>
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Your videos</a>
-        </li>
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Watch later</a>
-        </li>
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Liked Videos</a>
-        </li>
-        <li>
-          <hr>
-        </li>
-        <li class="nav-item active">
-          <a class="nav-link" href="#">SUBSCRIPTIONS</a>
-        </li>
-        <li class="nav-item active">
-          <a class="nav-link" href="#">More FROM YOUTUBE</a>
-        </li>
-        <li class="nav-item active">
-          <a class="nav-link" href="#">YouTube Premium</a>
-        </li>
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Gaming</a>
-        </li>
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Live</a>
-        </li>
-        <li>
-          <hr>
-        </li>
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Settings</a>
-        </li>
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Report history</a>
-        </li>
-        <li class="nav-item active"">
+<div id="navbartop">
+  <nav id="navbar_side" class="scrolling-navbar">
+    <div>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul id="sidebarstyle" class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Trending</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Subscriptions</a>
+          </li>
+          <li>
+            <hr>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Library</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#">History</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Your videos</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Watch later</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Liked Videos</a>
+          </li>
+          <li>
+            <hr>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#">SUBSCRIPTIONS</a>
+          </li>
+          <li>
+            <hr>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#">More FROM YOUTUBE</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#">YouTube Premium</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Gaming</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Live</a>
+          </li>
+          <li>
+            <hr>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Settings</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Report history</a>
+          </li>
+          <li class="nav-item active"">
           <a class=" nav-link" href="#">Help</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Send feedback</a>
+          </li>
+          <li>
+            <hr>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#">About</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Press</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Copyright</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Contact us</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Creators</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Advertise</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Developers</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Terms</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Privacy</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Policy and Safety</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Test new features</a>
+          </li>
+          <li class="disabled">
+            <a>@2020 Google LLC</a>
+          </li>
+      </div>
+  </nav>
+</div>
+
+
+<div id="navbartop1">
+  <nav id="navbar_side" class="scrolling-navbar">
+    <div>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="background-color: black; opacity: 0.35; height: 849px; width: 520px; position: absolute;
+          left: 158px; top: 66px; z-index: 1;">
+        </div>
+        <ul id="sidebarstyle1" class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Trending</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Subscriptions</a>
+          </li>
+          <li>
+            <hr>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Library</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#">History</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Your videos</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Watch later</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Liked Videos</a>
+          </li>
+          <li>
+            <hr>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#">SUBSCRIPTIONS</a>
+          </li>
+          <li>
+            <hr>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#">More FROM YOUTUBE</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#">YouTube Premium</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Gaming</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Live</a>
+          </li>
+          <li>
+            <hr>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Settings</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Report history</a>
+          </li>
+          <li class="nav-item active"">
+          <a class=" nav-link" href="#">Help</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Send feedback</a>
+          </li>
+          <li>
+            <hr>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#">About</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Press</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Copyright</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Contact us</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Creators</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Advertise</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Developers</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Terms</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Privacy</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Policy and Safety</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Test new features</a>
+          </li>
+          <li class="disabled">
+            <a>@2020 Google LLC</a>
+          </li>
+      </div>
+  </nav>
+
+</div>
+
+
+
+</div>
+
+<nav id="navbar_side" class="scrolling-navbar">
+  <div id="nav2">
+    <div class="navbar-collapse collapse show" id="navbarSupportedContent">
+      <ul id="navbar_link">
+        <li class="nav-item active">
+          <a class="nav-link " style="padding: 0px;" href="#">Home</a>
         </li>
         <li class="nav-item active">
-          <a class="nav-link" href="#">Send feedback</a>
+          <a class="nav-link" style="padding: 0px;" href="#">Trending</a>
         </li>
-        <li>
-          <hr>
+        <li class="nav-item active">
+          <a class="nav-link" style="padding: 0px;" href="#">Subscriptions</a>
         </li>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">About</a>
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Press</a>
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Copyright</a>
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Contact us</a>
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Creators</a>
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Advertise</a>
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Developers</a>
-            </li>
-          </ul>
-        </div>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Terms</a>
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Privacy</a>
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Policy and Safety</a>
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Test new features</a>
-            </li>
-          </ul>
-        </div>
-        <li class="nav-item">
-          <a class="nav-link disabled" href="#">@ 2020 Google LLC</a>
+        <li class="nav-item active">
+          <a class="nav-link" style="padding: 0px;" href="#">Library</a>
         </li>
       </ul>
     </div>
+  </div>
 </nav>
 
 
+
+
 <body>
-  <div class="container" style=" padding: 30px; ">
+  <div class="container">
     {% block content %}
     {% endblock %}
   </div>
+
+  <script>
+    var value = 1
+    function removescroll() {
+      if (value == 1) {
+        document.body.classList.add("stop-scrolling");
+        value = value - 1
+
+      }
+      else {
+        document.body.classList.remove("stop-scrolling");
+        value = value + 1
+      }
+    }
+
+  </script>
+
+
+
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src=" https://code.jquery.com/jquery-3.5.1.slim.min.js "

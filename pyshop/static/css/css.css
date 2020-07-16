@@ -1,32 +1,92 @@
-/* On screens that are 992px wide or less, go from four columns to two columns */
-
-@media screen and (max-width: 992px) {
-    #navbar {
-        color: red;
-    }
-}
-
-/* On screens that are 600px wide or less, make the columns stack on top of each other instead of next to each other */
-
 @media screen and (max-width: 718px) {
-    #navbar {
-        color: red;
-    }
-    #navbar_search{
+    #navbar_search {
         width: 40%;
     }
+    #navbar_link {
+        display: none;
+    }
+    .container {
+        width: 100%;
+        margin-right: auto;
+        margin-left: auto;
+        position: absolute;
+        left: -88px;
+        top: 60px;
+        right: 0;
+        bottom: 0;
+    }
+    .row {
+        width: 600px;
+    }
+    #card {
+        padding-right: 100px;
+    }
+    #cardsinzoom {
+        width: 288px;
+        height: 200px;
+    }
+    #navbar {
+        width: 100%;
+        background-color: white;
+    }
+    #navbar div {
+        width: 100%;
+    }
+    #navbartop {
+        display: none;
+    }
+    #sidebarstyle1 {
+        background-color: white;
+        z-index: 9999;
+        position: fixed;
+        height: 100%;
+        overflow-y: auto;
+        padding-bottom: 100px;
+    }
+    .stop-scrolling {
+        height: 100%;
+        overflow: hidden;
+    }
 }
+
 @media screen and (min-width: 718px) {
-    #navbar_search{
+    #navbar_search {
         width: 70%;
     }
-    
+    .container {
+        width: 100%;
+        margin-right: auto;
+        margin-left: auto;
+        position: absolute;
+        left: 150px;
+        top: 60px;
+        right: 0;
+        bottom: 0;
+    }
+    #cardsinzoom {
+        width: 265px;
+        height: 175px;
+    }
+    #navbar {
+        width: 100%;
+        background-color: white;
+    }
+    #navbartop1 {
+        display: none;
+        background-color: white;
+    }
+    #sidebarstyle {
+        overflow-y: auto;
+        height: 100%;
+        position: absolute;
+        padding-bottom: 100px;
+    }
 }
+
 @media screen and (max-width: 605px) {
-    #navbar_search{
+    #navbar_search {
         width: 30%;
     }
-    
 }
 
 .icon {
@@ -86,10 +146,6 @@ p {
     padding: 0px;
 }
 
-h1 {
-    color: red;
-}
-
 #navbaropen button:focus {
     width: 40px;
     height: 40px;
@@ -112,25 +168,37 @@ h1 {
     color: black;
 }
 
-.container {
-    width: 100%;
-    margin-right: auto;
-    margin-left: auto;
-    position: absolute;
-    left: 150px;
-    top: 104px;
-    right: 0;
-    bottom: 0;
-}
-
-#navbar {
-    width: 100%;
-}
-
 .navbar {
     flex-wrap: unset;
 }
-#navbar_yt{
-    width: 25%;
+
+#navbar_yt {
+    width: 29%;
 }
 
+#search_button {
+    border-color: white;
+    outline: none;
+    box-shadow: none;
+}
+
+#serchbutton {
+    outline: none;
+    box-shadow: none;
+}
+
+#buttons {
+    border-color: white;
+    outline: none;
+    box-shadow: none;
+}
+
+#navbar_link {
+    list-style-type: none;
+    padding-inline-start: 0px;
+    padding: inherit;
+}
+
+h1 {
+    color: blue;
+}
