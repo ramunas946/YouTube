@@ -19,6 +19,7 @@
             {%for product in products %}
             <div style="padding-right: 10px;">
                 <div class="card" style="padding-bottom: 100px;">
+                    <button id="vediopress"></button>
                     <div id="cardsinzoom">
                         <div class="image">
                             <img id="cardsinzoom" src="{{product.image}}" class="card-img-top" alt="..." class="img">
@@ -28,6 +29,7 @@
                                 </div>
                             </div>
                         </div>
+
                         <div class="vidoe_info">
                             <span class="title">
                                 <img class="rounded-circle" src="{{ product.icon }}" alt="..."
@@ -52,13 +54,3 @@
 
 
 {% endblock %}
-
-<!--
-image
-videoTime
-icon
-title
-username
-views 
-uploadeDay  
--->

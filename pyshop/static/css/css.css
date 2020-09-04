@@ -4,6 +4,7 @@
     }
     #navbar_link {
         display: none;
+        
     }
     .container {
         width: 100%;
@@ -20,6 +21,7 @@
     }
     #card {
         padding-right: 100px;
+        
     }
     #cardsinzoom {
         width: 288px;
@@ -68,18 +70,30 @@
         height: 175px;
     }
     #navbar {
+        z-index: 9999;
         width: 100%;
         background-color: white;
+        position: fixed;
     }
     #navbartop1 {
         display: none;
         background-color: white;
     }
     #sidebarstyle {
+        z-index: 9999;
         overflow-y: auto;
         height: 100%;
-        position: absolute;
         padding-bottom: 100px;
+        top: 70px;
+        position: fixed;
+    }
+    #navbar_link{
+    z-index: 9999;
+    overflow-y: auto;
+    height: 100%;
+    padding-bottom: 100px;
+    top: 70px;
+    position: fixed;
     }
 }
 
@@ -201,4 +215,17 @@ p {
 
 h1 {
     color: blue;
+}
+#vediopress{
+    border: none;
+    background: none;
+    background-color: black;
+    opacity: 0.1;
+    position: absolute;
+    height: 100px;
+    
+}
+#card{
+    position: relative;
+    
 }
