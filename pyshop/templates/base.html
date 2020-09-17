@@ -25,7 +25,7 @@
     </button>
     <img src="{% static 'imges/YouTube_icon.png' %}" style=" height:
     37px; width: 40px; " alt="">
-    <a class="navbar-brand" href="#">YouTube</a>
+    <a class="navbar-brand" href="/">YouTube</a>
   </div>
   <div id="navbar_search" style="display: inherit;" class="border border-dark">
     <input id="search_button" class="form-control my-0 py-1 red-border rounded-0" type="text" placeholder="Search"
@@ -41,7 +41,11 @@
         <img src="{% static 'imges/camera.png' %}" style=" height:20px; width: 20px; " alt="">
       </button>
       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <a class="dropdown-item" href="#">Upload video</a>
+        {% if request.user.is_authenticated  %}
+        <a class="dropdown-item" href="/upload">Upload video</a>
+        {% else %}
+        <a class="dropdown-item" href="/login">Upload video</a>
+        {% endif %}
         <a class="dropdown-item" href="#">Go live</a>
       </div>
     </div>
@@ -58,6 +62,7 @@
         <a class="dropdown-item" href="#">YouTube for Artists</a>
       </div>
     </div>
+    {% if request.user.is_authenticated  %}
     <div class="dropdown">
       <button id="buttons" type="button" class="btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <img src="{% static 'imges/bell.png' %}" style=" height:20px; width: 20px; " alt="">
@@ -73,9 +78,27 @@
     37px; width: 40px; ">
       </button>
       <div class="dropdown-menu dropdown-menu-right">
+        <a class="dropdown-item" href="/logout">Sign out</a>
+        <a class="dropdown-item" href="/user/{{object.user_id}}">Your channel</a>
+      </div>
+    </div>
+    {% else %}
+    <div class="dropdown">
+      <button id="buttons" type="button" class="btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <img src="{% static 'imges/dotsx3.png' %}" style=" height:20px; width: 20px; " alt="">
+      </button>
+      <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
         <a class="dropdown-item" href="#">Action</a>
       </div>
     </div>
+    <div>
+      <button id="buttons" type="button" class="btn">
+        <a href="/login">
+          <div class="rectangle"></div>
+        </a>
+      </button>
+    </div>
+    {% endif %}
   </div>
 </nav>
 <div id="navbartop">

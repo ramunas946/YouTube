@@ -129,16 +129,17 @@ span.title2 {
 
 .bottom-right {
     position: absolute;
-    bottom: 8px;
+    bottom: 80px;
     right: 16px;
+
 }
 
-.text-block {
+#text-block{
     position: absolute;
     bottom: 80px;
-    right: -10px;
-    color: white;
+    right: 10px;
     padding-left: 10px;
+    color:black;
 }
 
 .image {
@@ -229,3 +230,8 @@ h1 {
     position: relative;
     
 }
+.rectangle {
+    height:40px;
+    width: 60px;
+    background-color: #555;
+  }
