@@ -1,5 +1,6 @@
 from django.db import models
 from django.conf import settings
+from django.contrib.auth.models import User
 
 
 class Product(models.Model):
@@ -11,7 +12,7 @@ class Product(models.Model):
     views = models.FloatField()
     uploadeDay = models.FloatField()
     video = models.FileField()
-    account = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    account = models.ForeignKey(User, on_delete=models.CASCADE)
 
 class Offer(models.Model):
     code = models.CharField(max_length=10)
@@ -19,5 +20,5 @@ class Offer(models.Model):
     discount = models.FloatField()
 
 class UserProfile(models.Model):
-    icon = models.FileField()
-    user_id = models.IntegerField()
+    icon = models.ImageField(upload_to="profileicons")
+    user = models.OneToOneField(User, on_delete=models.CASCADE)

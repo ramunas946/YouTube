@@ -26,8 +26,8 @@ class ProductForm(forms.ModelForm):
         fields = "__all__"
         
 class UserForm(forms.ModelForm):
-    icon = forms.FileField(required=False)
-    user_id = forms.IntegerField()
+    icon = forms.ImageField(required=False)
+    user = forms.IntegerField()
     class Meta:
         model = UserProfile
         fields = "__all__"

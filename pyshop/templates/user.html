@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,28 +14,23 @@
 
 </head>
 
-
 <body>
-
     <div style="
 position: absolute;
 top: 150px;
 right: 400px;">
-        <form method="POST" enctype="multipart/form-data">
             {% csrf_token %}
-            <p>{{ form.icon}}</p>
-            <label for="file-input">
-            <img class=" rounded-circle " src="/media/{{object.icon}}" alt="profile icon "
-                style=" height: 100px; width: 150px; ">
-            </label>
-            <input id="file-input" type="file" name="icon"style="display: none;" id="id_icon" />
-            
-            <input type="submit" class="btn btn-primary" value="submit">
-        </form>
+            <a href="update/{{user.userprofile.user_id}}">
+                {% if user.userprofile.icon %}
+                <img class=" rounded-circle " src="{{user.userprofile.icon.url}}" alt="profile icon"
+                    style=" height: 100px; width: 150px; ">
+                {% else %}
+                <img class=" rounded-circle " src="{% static 'images/default_icon.png' %}" alt="profile icon"
+                    style=" height: 100px; width: 150px; ">
+                {% endif %}
+            </a>
+            {{userform.username}}
     </div>
-    
-    
-
 </body>
 
 </html>

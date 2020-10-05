@@ -8,11 +8,12 @@ urlpatterns = [
     path('', views.index),
     path('', include('django.contrib.auth.urls')),
     path('new', views.new),
+    path('base', views.base),
     path('register', views.register),
     path('upload', views.upload),
     path('videoshow/<int:id>/', views.videoWatch),
-    path('user/<int:user_id>/', views.user_view),
-    path('user/<int:id>/', views.user_update),
+    path('user/', views.user_view),
+    path('user/update/<int:user_id>/', views.user_update), 
 
     
     
