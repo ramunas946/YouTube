@@ -31,7 +31,8 @@ right: 400px;">
                 style=" height: 100px; width: 150px; ">
             {% endif %}
             {{ form.icon }}
-            {{ form.user}}
+            {{ form.user.as_hidden }}
+            
             
             <button class="btn btn-success" type="submit">Update</button>
 

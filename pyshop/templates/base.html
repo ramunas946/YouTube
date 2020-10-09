@@ -72,11 +72,15 @@
       </div>
     </div>
     <div class="dropdown">
+      {% if user.userprofile.icon %}
       <button id="buttons" type="button" class="btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <img class=" rounded-circle " src="
-    https://cdn.pixabay.com/photo/2017/02/01/22/02/mountain-landscape-2031539__340.jpg " alt=" ... " style=" height:
-    37px; width: 40px; ">
+        <img class=" rounded-circle " src="{{user.userprofile.icon.url}}" style="height: 25px;">
       </button>
+      {% else %}
+      <button id="buttons" type="button" class="btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <img class=" rounded-circle " src="/static/images/default_icon.png" style="height: 25px;">
+      </button>
+      {% endif %}
       <div class="dropdown-menu dropdown-menu-right">
         <a class="dropdown-item" href="/logout">Sign out</a>
         <a class="dropdown-item" href="/user">Your channel</a>

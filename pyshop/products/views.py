@@ -6,7 +6,7 @@ from django.contrib.auth.forms import UserCreationForm
 from .forms import RegisterForm, ProductForm, UserForm
 from .models import Product, UserProfile
 from django.contrib.auth.models import User
-
+import os
 
 
 
@@ -38,20 +38,20 @@ def register(response):
 
 
 time = "2:30:40"
-icon = "https://images.pexels.com/photos/827209/pexels-photo-827209.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
 views = "0"
 uploadeDay = "0"
 username = "ramunas"
 
 
 def upload(request):
+    current_user = request.user
+    profile = UserProfile.objects.get(user_id = current_user.id)
     if request.method == "POST":
         form = ProductForm(request.POST or None, request.FILES)
         if form.is_valid():
-            current_user = request.user
             instance = form.save(commit=False)
             instance.videoTime = time
-            instance.icon = icon
+            instance.icon = profile.icon
             instance.views = views
             instance.uploadeDay = uploadeDay
             instance.username = current_user
@@ -80,18 +80,25 @@ def user_view(request):
     }
     return render(request, 'user.html', context)
 
-
 def user_update(request, user_id):
     
     current_user = request.user
     profile = get_object_or_404(UserProfile, user_id = current_user)
-    
+    delete_file = profile.icon
+    new = str(delete_file).replace("profileicons/", "")
+
     if request.method == "POST":
-        form = UserForm(request.POST or None, request.FILES or None, instance = profile)
+        form = UserForm(request.POST, request.FILES or None, instance = profile)
+        image_check = profile.icon
         if form.is_valid():
-
+            
             form.save()
-
+            if  image_check != "":
+                if form.has_changed() and profile.icon != "":
+                    filepath1 = request.FILES["icon"].name
+                    filepath = request.FILES.get(profile.icon.path)
+                    path = os.path.join("media\profileicons", new)
+                    os.remove(path)
             return redirect('/user')
     else:
         form = UserForm(instance = profile)
